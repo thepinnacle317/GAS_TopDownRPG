@@ -41,6 +41,6 @@ float UMMC_MaxMana::CalculateBaseMagnitude_Implementation(const FGameplayEffectS
 	const int32 PlayerLevel = CombatInterface->GetPlayerLevel();
 
 	// Custom calculation for Max Mana based on Intelligence and the player level
-	return 50.f +2.5f * Intelligence + 15.f * PlayerLevel;
+	return 50.f + 2.5f * Intelligence + 15.f * PlayerLevel;
 }
 

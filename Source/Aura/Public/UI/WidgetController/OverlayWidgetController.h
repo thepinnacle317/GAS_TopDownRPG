@@ -60,6 +60,7 @@ public:
 	FMessageWidgetRowSignature MessageWidgetRowDelegate;
 protected:
 
+	// Allows a DT to be assigned more message widget data
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category="Widget Data")
 	TObjectPtr<UDataTable> MessageWidgetDataTable;
 

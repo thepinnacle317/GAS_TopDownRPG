@@ -48,7 +48,7 @@ void UOverlayWidgetController::BindCallbacksToDependencies()
 		AuraAttributeSet->GetMaxManaAttribute()).AddLambda(
 			[this](const FOnAttributeChangeData& Data)
 			{
-				OnHealthChanged.Broadcast(Data.NewValue);
+				OnMaxManaChanged.Broadcast(Data.NewValue);
 			}
 			);
 
