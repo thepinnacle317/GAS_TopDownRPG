@@ -8,6 +8,7 @@
 #include "Interaction/CombatInterface.h"
 #include "AuraCharacterBase.generated.h"
 
+class UGameplayAbility;
 class UGameplayEffect;
 class UAbilitySystemComponent;
 class UAttributeSet;
@@ -50,4 +51,10 @@ protected:
 	void InitializeDefaultAttributes() const;
 	
 	virtual void InitAbilityActorInfo();
+
+	void AddCharacterAbilities();
+private:
+
+	UPROPERTY(EditAnywhere, Category="Abilities")
+	TArray<TSubclassOf<UGameplayAbility>> StartupAbilities;
 };
