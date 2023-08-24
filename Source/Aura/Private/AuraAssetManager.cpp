@@ -2,6 +2,7 @@
 
 
 #include "AuraAssetManager.h"
+#include "AbilitySystemGlobals.h"
 #include "AuraGameplayTags.h"
 
 // Singleton that is set in the Engine Config file
@@ -21,4 +22,8 @@ void UAuraAssetManager::StartInitialLoading()
 
 	// Loading of the native tags
 	FAuraGameplayTags::InitializeNativeGameplayTags();
+
+	// This is very important in order to be able to use Target Data. /* Requirement */
+	// This function initializes Target Data Script Struct Cache.  This has to do with Data Serialization.
+	UAbilitySystemGlobals::Get().InitGlobalData();
 }
