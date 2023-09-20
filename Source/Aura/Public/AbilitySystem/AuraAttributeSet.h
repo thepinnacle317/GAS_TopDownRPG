@@ -87,6 +87,12 @@ public:
 	void OnRep_Mana(const FGameplayAttributeData& OldMana) const;
 	// Vital--Mana End
 
+	/* Meta Attributes */
+	
+	UPROPERTY(BlueprintReadOnly, Category="Meta Attributes")
+	FGameplayAttributeData IncomingDamage;
+	ATTRIBUTE_ACCESSORS(UAuraAttributeSet, IncomingDamage);
+
 	/* Primary Attributes--Strength Start */
 	UFUNCTION()
 	void OnRep_Strength(const FGameplayAttributeData& OldStrength) const;
