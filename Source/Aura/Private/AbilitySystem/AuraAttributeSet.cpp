@@ -8,6 +8,8 @@
 #include "Net/UnrealNetwork.h"
 #include "AuraGameplayTags.h"
 #include "Interaction/CombatInterface.h"
+#include "Kismet/GameplayStatics.h"
+#include "Player/AuraPlayerController.h"
 
 UAuraAttributeSet::UAuraAttributeSet()
 {
@@ -146,13 +148,28 @@ void UAuraAttributeSet::PostGameplayEffectExecute(const FGameplayEffectModCallba
 			}
 			else
 			{
-				// Activate an ability by this tag
+				// Activate an ability by this tag. Hit React
 				FGameplayTagContainer TagContainer;
 				TagContainer.AddTag(FAuraGameplayTags::Get().Effects_HitReact);
 				Props.TargetASC->TryActivateAbilitiesByTag(TagContainer);
 			}
+
+			ShowFloatingText(Props, LocalIncomingDamage);
 		}
 	}
+}
+
+void UAuraAttributeSet::ShowFloatingText(const FEffectProperties& Props, float Damage) const
+{
+	// Damage Text
+    			// Make sure it is not damage to themselves
+    			if (Props.SourceCharacter != Props.TargetCharacter)
+    			{
+    				if (AAuraPlayerController* PC = Cast<AAuraPlayerController>(UGameplayStatics::GetPlayerController(Props.SourceCharacter, 0)))
+    				{
+    					PC->ShowDamageNumber(Damage, Props.TargetCharacter);
+    				}
+    			}
 }
 
 void UAuraAttributeSet::OnRep_Health(const FGameplayAttributeData& OldHealth) const
