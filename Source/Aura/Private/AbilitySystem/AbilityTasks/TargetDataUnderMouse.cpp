@@ -52,7 +52,7 @@ void UTargetDataUnderMouse::SendMouseCursorData()
 	// Creates a handle to package Data to be sent to the server
 	FGameplayAbilityTargetDataHandle DataHandle;
 	
-	// This returns a hit result for a single target that will be need for replication on the server.
+	// This returns a hit result for a single target that will be needed for replication on the server.
 	FGameplayAbilityTargetData_SingleTargetHit* Data = new FGameplayAbilityTargetData_SingleTargetHit();
 	Data->HitResult = CursorHit;
 	DataHandle.Add(Data);

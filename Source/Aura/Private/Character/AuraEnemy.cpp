@@ -36,7 +36,6 @@ void AAuraEnemy::BeginPlay()
 	// This sets the Widget Controller to the Enemy.  We can do this because the Widget Controller is a UObject so it can be anything.
 	if (UAuraUserWidget* AuraUserWidget = Cast<UAuraUserWidget>(HealthBar->GetUserWidgetObject()))
 	{
-		
 		AuraUserWidget->SetWidgetController(this);
 	}
 

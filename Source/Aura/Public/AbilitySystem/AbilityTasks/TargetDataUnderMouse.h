@@ -25,7 +25,7 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "GAS|AbilityTasks", meta = (DisplayName = "Target Data Under Mouse", HidePin = "OwningAbility", DefaultToSelf = "OwningAbility", BlueprintInternalUseOnly = "true"))
 	static UTargetDataUnderMouse* CreateTargetDataUnderMouse(UGameplayAbility* OwningAbility);
 
-	// This is how your can create execution pins for this node.
+	// This is how you can create execution pins for this node.
 	UPROPERTY(BlueprintAssignable)
 	FMouseTargetDataSignature ValidData;
 
