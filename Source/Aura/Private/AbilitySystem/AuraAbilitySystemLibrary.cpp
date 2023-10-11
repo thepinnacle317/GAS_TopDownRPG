@@ -2,7 +2,6 @@
 
 
 #include "AbilitySystem/AuraAbilitySystemLibrary.h"
-
 #include "AuraAbilityTypes.h"
 #include "Game/AuraGameModeBase.h"
 #include "Kismet/GameplayStatics.h"
@@ -99,7 +98,6 @@ bool UAuraAbilitySystemLibrary::IsBlockedHit(const FGameplayEffectContextHandle&
 		return AuraEffectContext->IsBlockedHit();
 	}
 	return false;
-	 
 }
 
 bool UAuraAbilitySystemLibrary::IsCriticalHit(const FGameplayEffectContextHandle& EffectContextHandle)
